@@ -1,65 +1,96 @@
+package robopet;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class Shelter {
 
-     Map <String,Pet> map = new HashMap<>();    
+	Map<String, Pet> shelterMap = new HashMap<>();
+	int choice2;
+	String petName;
+	String description;
+	boolean canine;
+	String pet;
 
-     
-/*
+	public void addPet() {
 
-Map<>(Name,pet)  // create HashMap
+		System.out.println("Enter Pet Name");
+		KeyboardInput name = new KeyboardInput();
+		petName = name.getStringValue("");
+		System.out.println();
+		System.out.println("Enter Pet description");
+		KeyboardInput newDescription = new KeyboardInput();
+		description = newDescription.getStringValue("");
+		System.out.println("");
 
-public void list()  // list HashMap
+		System.out.println("1)  Add as Organic Dog\r\n" + //
+				"\r\n" + //
+				"2)  Add as Organic Cat\r\n" + //
+				"\r\n" + //
+				"3)  Add as Robotic Dog\r\n" + //
+				"\r\n" + //
+				"4)  Add as Robotic Cat\r\n" + //
+				"\r\n" + //
+				"");
 
-for each hashmap pet 
-sout pet name description
+		KeyboardInput num1 = new KeyboardInput();
+		choice2 = num1.getIntegerValue("Enter a number 1-4: ");
 
-public void choose() // choose from Hashmap
+		switch (choice2) {
+			case 1:
+				addOrganicDog();
+				break;
+			case 2:
+				addOrganicCat();
+				break;
+			case 3:
+				addRoboticDog();
+				break;
+			case 4:
+				addRoboticCat();
+				break;
+		}
 
-sout enter name
-nameequalsHashmap
+	}
 
-public void add()
+	public void addOrganicDog() {
+		Dog pet = new Dog(petName, description, 0, 0, 0, 0, 0, true, true);
+		shelterMap.put(petName, pet);
 
-sout enter name
-keyboard input String
-keyboard input Description
- petId = new pet(Name, description,hunger,thirst,mange,boredom)
-put(Name,petId)
+	}
 
-public void erase()
+	public void addOrganicCat() {
+		Cat pet = new Cat(petName, description, 0, 0, 0, 0, 0, false, true);
+		shelterMap.put(petName, pet);
 
-sout enter name
-keyboard input String name
-remove(Name)
+	}
 
-	
-public void carePet() // iteration of main for Vpet
+	public void addRoboticDog() {
+		Robot pet = new Robot(petName, description, 0, 0, 0, true, true);
+		shelterMap.put(petName, pet);
 
-for each hashmap pet
-sout choices
+	}
 
-	1) feed 
-	   feed()
+	public void addRoboticCat() {
+		Robot pet = new Robot(petName, description, 0, 0, 0, false, true);
+		shelterMap.put(petName, pet);
 
-	2) clean
-	   clean()
+	}
 
-	3) water
-	   water()
+	public void listPet() {
 
-	4) play
-           play()
-		
-	5) nothing
+		shelterMap.forEach((petName, pet) -> {
 
- 
+		});
 
-public void tickAll()
+	}
 
-for each hashmap pet
-add tick() for each pet
-*/
-     
+	public void choosePet() {
+
+		shelterMap.forEach((petName, pet) -> {
+
+		});
+
+	}
 }
+

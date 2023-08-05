@@ -1,50 +1,48 @@
+  package robopet;
+
 public class App {
-    public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {
 
-        Shelter day = new Shelter();
-/*
-Shelter ____ = new Shelter
+		int choice1;
+		boolean quit = false;
+		Shelter shelter = new Shelter();
 
-Sout welcome to the shelter
+		while (quit == false) {
+			System.out.println();
+			System.out.println("Welcome to the Pet Shelter\r\n" + //
+					"\r\n" + //
+					"--Now with Robotic Pets--\r\n" + //
+					"\r\n" + //
+					"1)  View list of pets\r\n" + //
+					"\r\n" + //
+					"2)  Add pets to list\r\n" + //
+					"\r\n" + //
+					"3)  Choose pet(s) from list\r\n" + //
+					"\r\n" + //
+					"4)  Quit shelter\r\n" + //
+					"");
 
-While (quit = false) 
+			KeyboardInput num1 = new KeyboardInput();
+			choice1 = num1.getIntegerValue("Enter a number 1-4: ");
 
-sout Shelter Menu 
+			switch (choice1) {
+				case 1:
+					// shelter.listPet();
+					break;
+				case 2:
+					// shelter.addPet();
+					break;
+				case 3:
+					// shelter.choosePet();
+					break;
+				case 4:
+					quit = true;
+					break;
+			}
+			System.out.println();
+			System.out.println("Thank You for your service.");
+			System.out.println();
 
-switch 	1) List Pets
-	   list()
-
-	2) Add Pets
-           add() 
-
-	3) Erase Pets
-	   list()
-           choose()      		   
-	   erase()
-
-	4) Care for Pets
-	   list()	
-	   choose()
-	   care()
-	   tickAll()		
-	
-	5) Quit Shelter
-	   quit = false
-
-*/
-
-
-        
-                
-
-
-    
-
-        
-        
-
-
-
-
-    }
+		}
+	}
 }

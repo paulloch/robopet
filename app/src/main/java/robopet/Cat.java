@@ -1,3 +1,5 @@
+package robopet;
+
 public class Cat extends Pet {
 
     private int hunger;

@@ -1,3 +1,5 @@
+package robopet;
+
 public class Dog extends Pet{
     
 
@@ -9,7 +11,7 @@ public class Dog extends Pet{
     private int days;
     private boolean alive;
     
- public Dog(String name, String description, int hunger, int thirst,
+ public Dog(String petName, String description, int hunger, int thirst,
  int mange, int boredom, int dirtyHabitat, boolean isCanine, boolean alive){
 
     
