@@ -1,7 +1,8 @@
-  package robopet;
+package robopet;
 
 public class App {
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] 
+	args) throws Exception {
 
 		int choice1;
 		boolean quit = false;
@@ -27,22 +28,24 @@ public class App {
 
 			switch (choice1) {
 				case 1:
-					// shelter.listPet();
+					shelter.listPet();
 					break;
 				case 2:
-					// shelter.addPet();
+					shelter.addPet();
 					break;
 				case 3:
-					// shelter.choosePet();
+					 shelter.choosePet();
 					break;
 				case 4:
 					quit = true;
 					break;
 			}
-			System.out.println();
-			System.out.println("Thank You for your service.");
-			System.out.println();
 
 		}
+
+		System.out.println();
+		System.out.println("Thank You for your service.");
+		System.out.println();
+
 	}
 }
