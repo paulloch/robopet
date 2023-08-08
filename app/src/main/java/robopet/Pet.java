@@ -1,3 +1,5 @@
+package robopet;
+
 public abstract class Pet {
 
     private String name;
@@ -9,7 +11,42 @@ public abstract class Pet {
     private int dirtyHabitat;
     private int days;
     private boolean canine;
+    private boolean alive;
 
+    public void infoPet() {
+        System.out.println(name + " " + description);}
+
+    /* need  method to send info about pet to the screen
+    
+       if (alive == false) {
+
+        } else if (canine == true) {
+
+        } else {
+
+        }
+
+    }
+   */
+
+    public void carePet() {    
+/*  need method to give user options to care for the pet
+
+    for each kind of pet.
+    
+
+
+ */
+
+        if (alive == false) {
+
+        } else if (canine == true) {
+
+        } else {
+
+        }
+
+    }
 
     public boolean isCanine() {
         return canine;
@@ -18,8 +55,6 @@ public abstract class Pet {
     public void setCanine(boolean canine) {
         this.canine = canine;
     }
-
-    private boolean alive;
 
     public boolean isAlive() {
         return alive;

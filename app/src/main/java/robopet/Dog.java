@@ -1,3 +1,5 @@
+package robopet;
+
 public class Dog extends Pet{
     
 
@@ -8,17 +10,33 @@ public class Dog extends Pet{
     private int dirtyHabitat;
     private int days;
     private boolean alive;
+    private boolean canine;
     
- public Dog(String name, String description, int hunger, int thirst,
- int mange, int boredom, int dirtyHabitat, boolean isCanine, boolean alive){
 
+
+public Dog(String petName, String description, int hunger, int thirst,
+ int mange, int boredom, int dirtyHabitat, boolean canine, boolean alive){
+    this.hunger = hunger;
+    this.thirst = thirst;
+    this.mange = mange;
+    this.boredom = boredom;
+    this.dirtyHabitat = dirtyHabitat;
+    this.alive = alive;
+    this.canine = canine;
     
 }
 
+
 public void cleanCage(){
+    /*  need method to cleanCage
 
+    dirtyHabitat goes down
+    all other variables go up
 
+    also need to change the methods to include 
+    the dirtyHabitat variable
 
+*/
 }
 
 public void tick() {
@@ -77,6 +95,70 @@ public boolean status() {
 
     return alive;
 }
+
+public int getHunger() {
+    return hunger;
+}
+
+public void setHunger(int hunger) {
+    this.hunger = hunger;
+}
+
+public int getThirst() {
+    return thirst;
+}
+
+public void setThirst(int thirst) {
+    this.thirst = thirst;
+}
+
+public int getMange() {
+    return mange;
+}
+
+public void setMange(int mange) {
+    this.mange = mange;
+}
+
+public int getBoredom() {
+    return boredom;
+}
+
+public void setBoredom(int boredom) {
+    this.boredom = boredom;
+}
+
+public int getDirtyHabitat() {
+    return dirtyHabitat;
+}
+
+public void setDirtyHabitat(int dirtyHabitat) {
+    this.dirtyHabitat = dirtyHabitat;
+}
+
+public int getDays() {
+    return days;
+}
+
+public void setDays(int days) {
+    this.days = days;
+}
+
+public boolean isAlive() {
+    return alive;
+}
+
+public void setAlive(boolean alive) {
+    this.alive = alive;
+}
+
+ public boolean isCanine() {
+        return canine;
+    }
+
+    public void setCanine(boolean canine) {
+        this.canine = canine;
+    }
 
 
 }
