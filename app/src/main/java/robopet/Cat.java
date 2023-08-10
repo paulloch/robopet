@@ -12,7 +12,7 @@ public class Cat extends Pet {
     private boolean canine;
 
     public Cat(String name, String description, int hunger, int thirst,
-            int mange, int boredom, int dirtyHabitat, boolean canine, boolean alive) {
+            int mange, int boredom, int dirtyHabitat, int days, boolean canine, boolean alive) {
         this.hunger = hunger;
         this.thirst = thirst;
         this.mange = mange;

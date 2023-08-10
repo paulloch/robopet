@@ -15,7 +15,7 @@ public class Dog extends Pet{
 
 
 public Dog(String petName, String description, int hunger, int thirst,
- int mange, int boredom, int dirtyHabitat, boolean canine, boolean alive){
+ int mange, int boredom, int dirtyHabitat, int days, boolean canine, boolean alive){
     this.hunger = hunger;
     this.thirst = thirst;
     this.mange = mange;
@@ -58,7 +58,7 @@ public void feed() {
     mange = mange + 5;
 
 }
-
+ 
 public void water() {
     thirst = thirst - 10;
     hunger = hunger + 5;

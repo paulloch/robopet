@@ -1,5 +1,7 @@
 package robopet;
 
+
+
 public abstract class Pet {
 
     private String name;
@@ -14,7 +16,12 @@ public abstract class Pet {
     private boolean alive;
 
     public void infoPet() {
-        System.out.println(name + " " + description);}
+        System.out.println("Hunger = " + getHunger() + "   Thirst = " + getThirst());
+        System.out.println("Boredom = " + getBoredom() + "   Mange = " + getMange());
+        System.out.println("Feces = " + getDirtyHabitat() +  "    Days in Shelter = " + getDays() ); 
+
+    }
+        
 
     /* need  method to send info about pet to the screen
     
@@ -29,24 +36,19 @@ public abstract class Pet {
     }
    */
 
-    public void carePet() {    
-/*  need method to give user options to care for the pet
+    public void feed(){ }
 
-    for each kind of pet.
-    
+    public void water() {}
 
+    public void clean(){}
 
- */
+    public void play(){}
 
-        if (alive == false) {
+    public void cleanCage(){}
 
-        } else if (canine == true) {
+    public void cleanLitter(){}
 
-        } else {
-
-        }
-
-    }
+    public void tick(){ }
 
     public boolean isCanine() {
         return canine;
@@ -125,7 +127,7 @@ public abstract class Pet {
     public int getDays() {
         return days;
     }
-
+ 
     public void setDays(int days) {
         this.days = days;
     }

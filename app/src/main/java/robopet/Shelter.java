@@ -1,9 +1,9 @@
 package robopet;
 
-// still need to choosePet and erasePet
 
 import java.io.Console;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Shelter {
@@ -19,7 +19,7 @@ public class Shelter {
 
 		System.out.println("");
 
-		System.out.println("1) Add Organic Dog\r\n" + //
+		System.out.println("1)  Add Organic Dog\r\n" + //
 				"\r\n" + //
 				"2)  Add Organic Cat\r\n" + //
 				"\r\n" + //
@@ -58,9 +58,12 @@ public class Shelter {
 		KeyboardInput newDescription = new KeyboardInput();
 		description = newDescription.getStringValue("");
 		System.out.println("");
-		Dog pet = new Dog(petName, description, 0, 0, 0, 0, 0, true, true);
+		Dog pet = new Dog(petName, description, 0, 0, 0, 0, 0, 1, true, true);
+		pet.setName(petName);
+		pet.setDescription(description);
+		pet.setDays(1);
 		shelterMap.put(petName, pet);
-		
+		System.out.println(pet.getName() + " " + pet.getDescription() + pet.isCanine() + pet.isAlive());
 
 	}
 
@@ -73,9 +76,12 @@ public class Shelter {
 		KeyboardInput newDescription = new KeyboardInput();
 		description = newDescription.getStringValue("");
 		System.out.println("");
-
-		Cat pet = new Cat(petName, description, 0, 0, 0, 0, 0, false, true);
+		Cat pet = new Cat(petName, description, 0, 0, 0, 0, 0, 1, false, true);
+		pet.setName(petName);
+		pet.setDescription(description);
+		pet.setDays(1);
 		shelterMap.put(petName, pet);
+		System.out.println(pet.getName() + " " + pet.getDescription() + pet.isCanine() + pet.isAlive());
 	}
 
 	public void addRoboticDog() {
@@ -87,9 +93,12 @@ public class Shelter {
 		KeyboardInput newDescription = new KeyboardInput();
 		description = newDescription.getStringValue("");
 		System.out.println("");
-		Robot pet = new Robot(petName, description, 0, 0, 0, true, true);
-		
+		Robot pet = new Robot(petName, description, 0, 0, 1, true, true);
+		pet.setName(petName);
+		pet.setDescription(description);
+		pet.setDays(1);
 		shelterMap.put(petName, pet);
+		System.out.println(pet.getName() + " " + pet.getDescription());
 	}
 
 	public void addRoboticCat() {
@@ -101,18 +110,22 @@ public class Shelter {
 		KeyboardInput newDescription = new KeyboardInput();
 		description = newDescription.getStringValue("");
 		System.out.println("");
-		Robot pet = new Robot(petName, description, 0, 0, 0, false, true);
+		Robot pet = new Robot(petName, description, 0, 0, 1, false, true);
+		pet.setName(petName);
+		pet.setDescription(description);
+		pet.setDays(1);
 		shelterMap.put(petName, pet);
-		System.out.println(pet.getDescription()+ pet.getDays());
-
+		System.out.println(pet.getName() + " " + pet.getDescription());
 
 	}
 
 	public void listPet() {
-		for (Map.Entry<String,Pet> entry : shelterMap.entrySet()) {
+		for (Map.Entry<String, Pet> entry : shelterMap.entrySet()) {
 			System.out.println();
-			System.out.println(entry.getKey());
+			System.out.println(entry.getKey() + " " + entry.getValue().getDescription());
+			entry.getValue().infoPet();
 			Console console = System.console();
+			System.out.println();
 			System.out.println("Press ENTER key to continue...");
 			console.readLine();
 		}
@@ -121,8 +134,9 @@ public class Shelter {
 	public void choosePet() {
 
 		KeyboardInput num1 = new KeyboardInput();
+		System.out.println();
 		choice2 = num1.getIntegerValue("\r\n" + //
-				"1) Care for Pets   2) Remove Pets from List   3) Skip");
+				"1) Care for Pets   2) Remove Pet from List   3) Skip");
 
 		switch (choice2) {
 			case 1:
@@ -138,38 +152,134 @@ public class Shelter {
 
 		}
 	}
+// care pet incomplete and need to add the pet methods
 
 	public void carePet() {
+		for (Map.Entry<String, Pet> entry : shelterMap.entrySet()) {
+			System.out.println();
+			System.out.println(entry.getKey() + " " + entry.getValue().getDescription());
+			entry.getValue().infoPet();
+			if (entry.getValue().isAlive() == false) {
+				KeyboardInput num1 = new KeyboardInput();
+				choice2 = num1.getIntegerValue("1) Charge  2) Oil  3) Skip til tomorrow");
 
-// still not working
-		for (String petName : shelterMap.keySet()) {
-			System.out.println();
-			shelterMap.get(petName).infoPet();
-			System.out.println();
-			shelterMap.get(petName).carePet();
+				switch (choice2) {
+					case 1:
+						entry.getValue().feed();
+						entry.getValue().tick();						
+						entry.getValue().infoPet();
+						break;
+					case 2:
+						entry.getValue().water();
+						entry.getValue().tick();						
+						entry.getValue().infoPet();
+						break;
+					case 3:
+						entry.getValue().tick();					
+						break;
+
+				}
+			}
+
+			if (entry.getValue().isCanine() == false && entry.getValue().isAlive() == true) {
+				KeyboardInput num1 = new KeyboardInput();
+
+				choice2 = num1.getIntegerValue("1) Feed   2) Water   3) Clean   4) Play   5) Clean Litter  6) Skip til tomorrow");
+
+				switch (choice2) {
+					case 1:
+						entry.getValue().feed();
+						entry.getValue().tick();						
+						entry.getValue().infoPet();
+						break;
+					case 2:
+						entry.getValue().water();
+						entry.getValue().tick();						
+						entry.getValue().infoPet();
+						break;
+					case 3:
+						entry.getValue().clean();
+						entry.getValue().tick();						
+						entry.getValue().infoPet();
+						break;
+					case 4:
+						entry.getValue().play();
+						entry.getValue().tick();
+						entry.getValue().infoPet();						
+						break;
+					case 5:
+						entry.getValue().cleanLitter();
+						entry.getValue().tick();
+						entry.getValue().infoPet();							
+						break;
+					case 6:
+						entry.getValue().tick();					
+						break;
+
+
+				}
+
+			}
+
+			if (entry.getValue().isCanine() == true && entry.getValue().isAlive()==true) {
+				KeyboardInput num1 = new KeyboardInput();
+				choice2 = num1.getIntegerValue("1) Feed   2) Water  3) Clean  4) Play  5) Clean Cage  6)Skip til tomorrow");
+
+				switch (choice2) {
+					case 1:
+						entry.getValue().feed();
+						entry.getValue().tick();						
+						entry.getValue().infoPet();
+						break;
+					case 2:
+						entry.getValue().water();
+						entry.getValue().tick();						
+						entry.getValue().infoPet();
+						break;
+					case 3:
+						entry.getValue().clean();
+						entry.getValue().tick();
+						entry.getValue().infoPet();
+						break;
+					case 4:
+						entry.getValue().cleanCage();
+						entry.getValue().tick();
+						entry.getValue().infoPet();
+						break;
+					case 5:
+						entry.getValue().tick();
+						break;
+
+				}
+			}
 		}
 
 	}
 
 	public void removePet() {
 
-// still not working
-		for (String petName : shelterMap.keySet()) {
+		Iterator<Map.Entry<String, Pet>> iterator = shelterMap.entrySet().iterator();
+
+		while (iterator.hasNext()) {
+			Map.Entry<String, Pet> entry = iterator.next();
+			String key = entry.getKey();
+			System.out.println(key);
+			KeyboardInput num1 = new KeyboardInput();			
 			System.out.println();
-			shelterMap.get(petName).infoPet();
-			KeyboardInput num1 = new KeyboardInput();
 			choice2 = num1.getIntegerValue("\r\n" + //
 					"1) Remove Pet from List   2) Skip");
+
 			switch (choice2) {
 				case 1:
-					shelterMap.remove(petName);
-					break;
+					shelterMap.remove(key);
+					return;
 				case 2:
 					break;
 
 			}
 
 		}
+		;
 
 	}
 }
