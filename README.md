@@ -9,7 +9,7 @@ You have been called on to take in as many robots as possible, and try to arrang
 
 Robot Cats and Dogs are different from organic pets since they do not require to be cleaned, fed, played with, or watered, daily. And they do not require habitats to be cleaned, like cages or kitty litter.
 
-A Robot Cat or Dog, are essentially identical to each other, except only in shell appearance, and only require a weekly oil change, and have to vacuum cleaned every 5 days or dirt clogs their internals, and charged daily like a smartphone.
+A Robot Cat or Dog, are essentially identical to each other, except only in shell appearance, and only require a weekly oil change, and are self-cleaning and don't need daily maintenance, and charged periodically like a smartphone.
 
 As the manager of the Pet Shelter, you have to change your shelter's existing computer program to track pets and pet adoptions, with as little change as possible to your present program.
 
