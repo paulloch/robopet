@@ -16,25 +16,45 @@ public abstract class Pet {
     private boolean alive;
 
     public void infoPet() {
+        if (getDays() == 0){
+            System.out.println();
+            System.out.println("Your Organic Pet is Dead");
+            System.out.println();
+        }else {
+        System.out.println();
         System.out.println("Hunger = " + getHunger() + "   Thirst = " + getThirst());
         System.out.println("Boredom = " + getBoredom() + "   Mange = " + getMange());
         System.out.println("Feces = " + getDirtyHabitat() +  "    Days in Shelter = " + getDays() ); 
-
+        System.out.println();}
     }
         
 
-    /* need  method to send info about pet to the screen
-    
-       if (alive == false) {
-
-        } else if (canine == true) {
-
-        } else {
-
+    public void tick() {
+        if (getDays()!=0){setDays(getDays()+1);}
+        setHunger (getHunger() + 3);
+        setThirst (getThirst()+ 3);
+        setBoredom (getBoredom() + 3);
+        setMange (getMange() +3);
+        setDirtyHabitat(getDirtyHabitat() +3);
+        if (getHunger() < 0) {
+            setHunger(0);}
+        if (getThirst() < 0) {
+            setThirst(0);
         }
+        if (getBoredom() < 0) {
+            setBoredom(0);
+        }
+        if (getMange()< 0) {
+            setMange(0);
+        }
+        if (getDirtyHabitat()< 0) {
+            setDirtyHabitat(0);
+        }
+        if (getHunger()> 60 || getThirst() > 60 || getBoredom() > 60 || getMange() > 60 || getDirtyHabitat() >60) {
 
+            setDays(0);
+        }
     }
-   */
 
     public void feed(){ }
 
@@ -47,9 +67,6 @@ public abstract class Pet {
     public void cleanCage(){}
 
     public void cleanLitter(){}
-
-    public void tick(){ }
-
     public boolean isCanine() {
         return canine;
     }

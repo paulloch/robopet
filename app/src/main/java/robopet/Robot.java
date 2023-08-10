@@ -10,30 +10,50 @@ public class Robot extends Pet {
     private boolean canine;
     private boolean alive;
     
-    public Robot (String name, String description, int health, int thirst, int days,boolean canine, boolean alive){
+    public Robot (String name, String description, int hunger, int thirst, int days,boolean canine, boolean alive){
+        this.name=name;
+        this.description=description;
+        this.hunger = hunger;
+        this.thirst = thirst;
+        this.days = days;
+        this.canine = canine; 
+        this.alive = alive;
 
-// finish constructor
 
         
     }
+    public void infoPet() {
+        if (days == 0){
+            System.out.println();
+            System.out.println("Your Robotic Pet is non-functional. ");
+            System.out.println();
+        }else {
+        System.out.println();
+        System.out.println("Charge = " + getHunger() + " %"+ "   Oil Level = " + getThirst() + " %"+ "   Days in Shelter = " + getDays() ); 
+        System.out.println();}
+    }
+        
 
     
-    public void chargeRobot(){
+    public void feed(){
 
-// need method
+    hunger = 100;
 
-    }
+}
 
-    public void oilRobot(){
+    public void water(){
 
-// need method
-
-    }
+    thirst = 100;
+    
+}
 
     public void tick(){
 
-// need method
-
+        if (days !=0) {days = days + 1;}
+        if (days%2 == 0 ) {hunger = hunger - 49;}
+        if (days%7 == 0) { thirst = thirst -95;}
+        if (hunger <0 || thirst < 0){days = 0;}
+        
 
     }
 

@@ -24,37 +24,13 @@ public class Cat extends Pet {
     }
 
     public void cleanLitter() {
-        /*
-         * need method to clean Litter
-         * 
-         * dirtyHabitat goes down
-         * all other variables go up
-         * 
-         * also need to change the methods to include
-         * the dirty Habitat variable
-         * 
-         */
 
-    }
-
-    public void tick() {
+        dirtyHabitat = 0;
         hunger = hunger + 7;
         thirst = thirst + 7;
         boredom = boredom + 7;
         mange = mange + 7;
-        if (hunger < 0) {
-            hunger = 0;
-        }
-        if (thirst < 0) {
-            hunger = 0;
-        }
-        if (boredom < 0) {
-            hunger = 0;
-        }
-        if (mange < 0) {
-            hunger = 0;
-        }
-        days = days + 1;
+
     }
 
     public void feed() {
@@ -63,6 +39,7 @@ public class Cat extends Pet {
         boredom = boredom + 7;
         mange = mange + 7;
 
+        dirtyHabitat = dirtyHabitat + 11;
     }
 
     public void water() {
@@ -70,6 +47,8 @@ public class Cat extends Pet {
         hunger = hunger + 7;
         boredom = boredom + 7;
         mange = mange + 7;
+        dirtyHabitat = dirtyHabitat + 11;
+
     }
 
     public void play() {
@@ -77,6 +56,7 @@ public class Cat extends Pet {
         hunger = hunger + 7;
         thirst = thirst + 7;
         mange = mange + 7;
+        dirtyHabitat = dirtyHabitat + 11;
     }
 
     public void clean() {
@@ -84,23 +64,10 @@ public class Cat extends Pet {
         hunger = hunger + 7;
         thirst = thirst + 7;
         boredom = boredom + 7;
+        dirtyHabitat = dirtyHabitat + 11;
 
     }
 
-    public boolean status() {
-
-        System.out.println("your dogs hunger = " + hunger);
-        System.out.println("Your dogs thirst = " + thirst);
-        System.out.println("your dogs boredom = " + boredom);
-        System.out.println("your dogs mange = " + mange);
-        if (hunger > 50 || thirst > 50 || boredom > 50 || mange > 50) {
-            alive = false;
-        } else {
-            alive = true;
-        }
-
-        return alive;
-    }
 
     public int getHunger() {
         return hunger;
