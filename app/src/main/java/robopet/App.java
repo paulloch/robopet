@@ -1,13 +1,15 @@
 package robopet;
 
 public class App {
-	public static void main(String[] 
-	args) throws Exception {
+	public static void main(String[] args) throws Exception {
 
 		int choice1;
 		boolean quit = false;
 		Shelter shelter = new Shelter();
 
+		shelter.existingPets();
+
+	//	Game Loop 
 		while (quit == false) {
 			System.out.println();
 			System.out.println("Welcome to the Pet Shelter\r\n" + //
@@ -25,16 +27,18 @@ public class App {
 
 			KeyboardInput num1 = new KeyboardInput();
 			choice1 = num1.getIntegerValue("Enter a number 1-4: ");
+			System.out.println();
 
 			switch (choice1) {
 				case 1:
-					shelter.listPet();
+				 // shelter.listPet();
+					shelter.listOrgCat();
 					break;
 				case 2:
 					shelter.addPet();
 					break;
 				case 3:
-					 shelter.choosePet();
+					shelter.choosePet();
 					break;
 				case 4:
 					quit = true;
