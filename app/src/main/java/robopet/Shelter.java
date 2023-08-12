@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+// changes in menus to adust to robot pets addition
+// two additional options for adding robots and listing robots.
 
 public class Shelter {
 
@@ -18,21 +20,25 @@ public class Shelter {
 
 	//  16 pets for the shelter
 	public void existingPets() {
+		
 		Dog dog1 = new Dog("", "", 18, 22, 17, 15, 24, 20, true, true);
 		dog1.setName("Snoopy");
 		dog1.setDescription("White Beagle");
 		dog1.setDays(20);
 		shelterMap.put("Snoopy", dog1);
+		
 		Dog dog2 = new Dog("", "", 30, 32, 37, 25, 38, 29, true, true);
 		dog2.setName("Scooby");
 		dog2.setDescription("Hound");
 		dog2.setDays(29);		
 		shelterMap.put("Scooby", dog2);
+		
 		Dog dog3 = new Dog("", "", 26, 25, 33, 18, 14, 12, true, true);
 		dog3.setName("Pongo");
 		dog3.setDescription("Dalmatian");
 		dog3.setDays(12);
 		shelterMap.put("Pongo", dog3);
+		
 		Dog dog4 = new Dog("", "", 34, 12, 19, 39, 27, 30, true, true);
 		dog4.setName("Hooch");
 		dog4.setDescription("Mastiff");
@@ -44,16 +50,19 @@ public class Shelter {
 		cat1.setDescription("Orange Tabby");
 		cat1.setDays(18);
 		shelterMap.put("Garfield", cat1);
+		
 		Cat cat2 = new Cat("", "", 23, 25, 36, 12, 33, 17, false, true);
 		cat2.setName("Tom");
 		cat2.setDescription("Alley Cat");
 		cat2.setDays(17);
 		shelterMap.put("Tom", cat2);
+		
 		Cat cat3 = new Cat("", "", 18, 33, 45, 25, 19, 22, false, true);
 		cat3.setName("Sassy");
 		cat3.setDescription("Black Tabby");
 		cat3.setDays(22);
 		shelterMap.put("Sassy", cat3);
+
 		Cat cat4 = new Cat("", "", 29, 44, 36, 32, 42, 33, false, true);
 		cat4.setName("Mr. Bigglesworth");
 		cat4.setDescription("Hairless");
@@ -65,6 +74,7 @@ public class Shelter {
 		robot1.setDescription("Chihuahua");
 		robot1.setDays(28);
 		shelterMap.put("Bruiser",robot1);
+
 		Robot robot2 = new Robot("","",100,10,44,true,false);
 		robot2.setName("Lassie");
 		robot2.setDescription("Collie");
@@ -90,10 +100,10 @@ public class Shelter {
 		shelterMap.put("Salem",robot5);		
 
 		Robot robot6 = new Robot("","",80,100,24,false,false);
-		robot6.setName("Salem");
-		robot6.setDescription("Black Witch Cat");
+		robot6.setName("Morris");
+		robot6.setDescription("Commercial Cat");
 		robot6.setDays(21);
-		shelterMap.put("Salem",robot6);
+		shelterMap.put("Morris",robot6);
 
 		Robot robot7 = new Robot("","",90,100,34,false,false);
 		robot7.setName("Grumpy Cat");
