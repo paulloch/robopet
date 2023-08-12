@@ -13,6 +13,8 @@ public abstract class Pet {
     private boolean canine;
     private boolean alive;
 
+    // common shared method to infoPet and tick for organic pets
+    
     public void infoPet() {
         if (getDays() == 0) {
             System.out.println();

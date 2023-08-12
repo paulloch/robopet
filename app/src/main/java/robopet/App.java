@@ -7,9 +7,10 @@ public class App {
 		boolean quit = false;
 		Shelter shelter = new Shelter();
 
+		// creates pets for shelter
 		shelter.existingPets();
 
-	//	Game Loop 
+		// Game Loop and main menu
 		while (quit == false) {
 			System.out.println();
 			System.out.println("Welcome to the Pet Shelter\r\n" + //
@@ -28,7 +29,7 @@ public class App {
 			KeyboardInput num1 = new KeyboardInput();
 			choice1 = num1.getIntegerValue("Enter a number 1-4: ");
 			System.out.println();
-
+			// sub menu for lists
 			switch (choice1) {
 				case 1:
 					System.out.println("1) List all types of pets\r\n" + //
@@ -45,22 +46,23 @@ public class App {
 					KeyboardInput num2 = new KeyboardInput();
 					choice1 = num2.getIntegerValue("Enter a number 1-5: ");
 					System.out.println();
-					switch (choice1){
-						case 1:	
-					shelter.listPet();
-					break;
+					switch (choice1) {
+						case 1:
+							shelter.listPet();
+							break;
 						case 2:
-					shelter.listOrganicDog();
-					break;
+							shelter.listOrganicDog();
+							break;
 						case 3:
-					shelter.listOrganicCat();
-					break;
+							shelter.listOrganicCat();
+							break;
 						case 4:
-					shelter.listRoboticDog();
-					break;
+							shelter.listRoboticDog();
+							break;
 						case 5:
-					shelter.listRoboticCat();
-					break;}
+							shelter.listRoboticCat();
+							break;
+					}
 					break;
 				case 2:
 					shelter.addPet();
@@ -74,9 +76,6 @@ public class App {
 			}
 
 		}
-
-
-
 
 		System.out.println();
 		System.out.println("Thank You for your service.");

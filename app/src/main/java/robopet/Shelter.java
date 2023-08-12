@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+
 public class Shelter {
 
 	Map<String, Pet> shelterMap = new HashMap<>();
@@ -15,6 +16,7 @@ public class Shelter {
 	boolean canine;
 	String pet;
 
+	//  16 pets for the shelter
 	public void existingPets() {
 		Dog dog1 = new Dog("", "", 18, 22, 17, 15, 24, 20, true, true);
 		dog1.setName("Snoopy");
@@ -107,6 +109,7 @@ public class Shelter {
 
 	}
 
+	// methods to add the four kinds of pets
 	public void addPet() {
 
 		System.out.println("");
@@ -211,6 +214,7 @@ public class Shelter {
 
 	}
 
+	// 5 methods to list pets
 	public void listPet() {
 		for (Map.Entry<String, Pet> entry : shelterMap.entrySet()) {
 			if (entry.getValue().isAlive() == true && entry.getValue().isCanine() == true) {
@@ -285,6 +289,7 @@ public class Shelter {
 		}
 	}
 
+	// two options from iterating map care or remove pets
 	public void choosePet() {
 
 		KeyboardInput num1 = new KeyboardInput();

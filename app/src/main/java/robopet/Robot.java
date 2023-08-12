@@ -1,5 +1,6 @@
 package robopet;
 
+// new pet class for robot, methods different than organic pets.
 public class Robot extends Pet {
 
     private String name;
@@ -33,12 +34,15 @@ public class Robot extends Pet {
         }
     }
 
+    // charge uses feed method and hunger variable
     public void feed() {
 
         hunger = 100;
 
     }
 
+    // oil uses water method and thirst variable
+    
     public void water() {
 
         thirst = 100;
