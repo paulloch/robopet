@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-// changes in menus to adust to robot pets addition
+// changes in menus to adJust to robot pets addition
 // two additional options for adding robots and listing robots.
 
 public class Shelter {
@@ -109,7 +109,7 @@ public class Shelter {
 		robot7.setName("Grumpy Cat");
 		robot7.setDescription("Tardar");
 		robot7.setDays(33);
-		shelterMap.put("Grumpy Cat",robot5);		
+		shelterMap.put("Grumpy Cat",robot7);		
 
 		Robot robot8 = new Robot("","",90,10,14,false,false);
 		robot8.setName("Mr. Jinx");
